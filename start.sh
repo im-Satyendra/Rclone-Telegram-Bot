@@ -1,5 +1,5 @@
 curl https://rclone.org/install.sh | sudo bash
-pip3 install -r requirements.txt
+
 pip install python-telegram-bot --upgrade
 pip install subprocess32
 pip install subprocess.run
