@@ -320,7 +320,7 @@ def password(update, context):
 
 
 def main():
-	updater = Updater("TOKEN", use_context=True)
+	updater = Updater("1963945108:AAFyo9bg2k4BImXsAHgghYg2bEkkdaiDe4g", use_context=True)
 	dp = updater.dispatcher
 	dp.add_handler(CommandHandler("start", start))
 	dp.add_handler(CommandHandler("help", help))
