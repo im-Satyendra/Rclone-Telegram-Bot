@@ -68,7 +68,7 @@ def folder(update, context):
 	checku(update, context, inID)
 	if flag==True:
 		for path in run(command):
-			print path
+			print(path)
 			key.append([InlineKeyboardButton(path,callback_data=path)])
 		
 		key.append([InlineKeyboardButton("Cancel", callback_data="Cancel")])
@@ -110,9 +110,9 @@ def folder1(update, context):
 	f.close()
 	key = []
 	del key[:]
-	print command
+	print(command)
 	for path in run(command):
-		print path
+		print(path)
 		key.append([InlineKeyboardButton(path,callback_data=path)])
 	key.append([InlineKeyboardButton("Cancel", callback_data="Cancel")])
 	reply_markup = InlineKeyboardMarkup(key)
@@ -127,10 +127,10 @@ def checku(update, context, inID):
 	ch= str(inID)+ t1
 	for x in f:
 		if x==ch :
-			print "User Found"
+			print( "User Found")
 			flag=True
 		else :
-			print "User Not Found"
+			print( "User Not Found")
 
 
 def checkuA(update, context, inID):
@@ -141,17 +141,15 @@ def checkuA(update, context, inID):
 	ch= str(inID)+ t1
 	for x in f:
 		if x==ch :
-			print "User Found"
+			
 			flagA=True
-		else :
-			print "User Not Found"
-
+		
 
 def addu(update, context, Uid):
 	f = open("user.txt", "a")
 	t2='\n'
 	txt=str(Uid)+t2
-	print txt
+	
 	f.write(txt)
 	f.close()
 	f = open("user.txt", "r")
@@ -162,7 +160,7 @@ def adduA(update, context, Uid):
 	f = open("userA.txt", "a")
 	t2='\n'
 	txt=str(Uid)+t2
-	print txt
+	
 	f.write(txt)
 	f.close()
 	f = open("userA.txt", "r")
@@ -179,7 +177,7 @@ def rclone(update, context):
 	checkuA(update, context, inID)
 	if flagA == True :
 		for path in run(command):
-			print path
+			
 			update.message.reply_text(path)
 	else:
 		update.message.reply_text("Enter Admin Password!")
@@ -210,7 +208,7 @@ def rclonecopyprocess(update, context, command):
 	working1=""
 	prog=""
 	for toutput in run(command):
-		print toutput
+		
 		y= re.findall("^Transferred:", toutput)
 		z= re.findall("^ * ", toutput)
 		if (y):
